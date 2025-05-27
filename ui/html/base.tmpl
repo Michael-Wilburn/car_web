@@ -1,0 +1,48 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-theme="dark"
+  x-data="{
+                darkMode: { 
+                    on: false, 
+                    toggle() { this.on = !this.on; localStorage.setItem('darkMode', this.on); } 
+                },
+                init() {
+                    // Check if dark mode is stored in localStorage
+                    this.darkMode.on = JSON.parse(localStorage.getItem('darkMode') || 'false');
+                }
+            }"
+  :class="{'dark': darkMode.on}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{template "title" .}} - Automotores MW</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script defer src="/static/js/main.js"></script>
+    <!-- Load library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <link
+      rel="shortcut icon"
+      href="/static/img/favicon.svg"
+      type="image/x-icon"
+    /
+  </head>
+  <body
+    class="min-h-screen flex flex-col justify-between bg-surface dark:bg-black"
+  >
+    {{template "nav" .}}
+    {{template "main" .}}
+    {{template "footer" .}}
+    {{template "portal" .}}
+  </body>
+</html>
+{{ end }}
