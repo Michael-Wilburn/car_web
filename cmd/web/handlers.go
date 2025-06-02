@@ -1,8 +1,8 @@
 package main
 
 import (
-	"html/template" // New import
-	"log"           // New import
+	"html/template"
+	"log"
 	"net/http"
 )
 
@@ -11,7 +11,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 		http.NotFound(w, r)
 		return
 	}
-	// Include the navigation partial in the template files.
+
 	files := []string{
 		"./ui/html/components/typingHero.tmpl",
 		"./ui/html/components/brands.tmpl",

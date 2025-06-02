@@ -6,9 +6,9 @@
 	</a>
 	<!-- Desktop Menu -->
 	<ul class="hidden items-center gap-4 sm:flex">
-		<li><a href="/" class="font-bold text-primary underline-offset-2 hover:text-danger focus:outline-hidden focus:underline dark:text-primary-dark dark:hover:text-primary-dark" aria-current="page">Vehículos</a></li>
-		<li><a href="#" class="font-medium text-on-surface underline-offset-2 hover:text-danger focus:outline-hidden focus:underline dark:text-on-surface-dark dark:hover:text-primary-dark">Servicios</a></li>
-		<li><a href="#" class="font-medium text-on-surface underline-offset-2 hover:text-danger focus:outline-hidden focus:underline dark:text-on-surface-dark dark:hover:text-primary-dark">Contacto</a></li>
+		<li><a href="/autos" class="font-bold uppercase italic text-primary underline-offset-2 hover:underline transition-colors duration-200 focus:underline focus:outline-none dark:text-primary-dark dark:hover:text-primary-dark">autos</a></li>
+		<li><a href="/servicios" class="font-bold uppercase italic text-primary underline-offset-2 hover:underline transition-colors duration-200 focus:underline focus:outline-none dark:text-primary-dark dark:hover:text-primary-dark">servicios</a></li>
+		<li><a href="/contacto" class="font-bold uppercase italic text-primary underline-offset-2 hover:underline transition-colors duration-200 focus:underline focus:outline-none dark:text-primary-dark dark:hover:text-primary-dark">contacto</a></li>
 	</ul>
 	<!-- Mobile Menu Button -->
 	<button x-on:click="mobileMenuIsOpen = !mobileMenuIsOpen" x-bind:aria-expanded="mobileMenuIsOpen" x-bind:class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : null" type="button" class="flex text-on-surface dark:text-on-surface-dark sm:hidden" aria-label="mobile menu" aria-controls="mobileMenu">
@@ -21,9 +21,9 @@
 	</button>
 	<!-- Mobile Menu -->
 	<ul x-cloak x-show="mobileMenuIsOpen" x-transition:enter="transition motion-reduce:transition-none ease-out duration-300" x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0" x-transition:leave="transition motion-reduce:transition-none ease-out duration-300" x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" id="mobileMenu" class="fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-outline rounded-b-radius border-b border-outline bg-surface-alt px-6 pb-6 pt-20 dark:divide-outline-dark dark:border-outline-dark dark:bg-surface-dark-alt sm:hidden">
-		<li class="py-4"><a href="#" class="w-full text-lg font-bold text-primary focus:underline dark:text-primary-dark" aria-current="page">Autos</a></li>
-		<li class="py-4"><a href="#" class="w-full text-lg font-medium text-on-surface focus:underline dark:text-on-surface-dark">Servicios</a></li>
-		<li class="py-4"><a href="#" class="w-full text-lg font-medium text-on-surface focus:underline dark:text-on-surface-dark">Contacto</a></li>
+		<li class="py-4"><a href="/autos" class="w-full text-lg font-medium uppercase text-primary focus:underline dark:text-primary-dark" aria-current="page">Autos</a></li>
+		<li class="py-4"><a href="/servicios" class="w-full text-lg font-medium uppercase text-on-surface focus:underline dark:text-on-surface-dark">Servicios</a></li>
+		<li class="py-4"><a href="/contacto" class="w-full text-lg font-medium uppercase text-on-surface focus:underline dark:text-on-surface-dark">Contacto</a></li>
 		<!-- CTA Button -->
 		<li class="mt-4 w-full border-none"><a href="#" class="rounded-radius border border-primary bg-primary px-4 py-2 block text-center font-medium tracking-wide text-on-primary hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:opacity-100 active:outline-offset-0 dark:bg-primary-dark dark:border-primary-dark dark:text-on-primary-dark dark:focus-visible:outline-primary-dark">Mira nuestros vehículos</a></li>
 	</ul>

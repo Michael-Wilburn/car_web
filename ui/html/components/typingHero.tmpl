@@ -1,8 +1,8 @@
 {{define "typingHero"}}
-<div 
+<div
     x-data="{
         text: '',
-        textArray : ['Encontra tu próximo auto en Automotores MW.', 'Tu próximo vehículo esta cada vez más cerca!', 'Tenemos opciones de financiación, escribinos y te asesoramos.'],
+        textArray : ['Encontrá tu próximo auto en Automotores MW.', 'Tu próximo vehículo esta cada vez más cerca!', 'Tenemos opciones de financiación, escribinos y te asesoramos.'],
         textIndex: 0,
         charIndex: 0,
         typeSpeed: 100,
@@ -11,7 +11,7 @@
         pauseStart: 20,
         direction: 'forward',
         isCursorHidden: false,
-    }" 
+    }"
     x-init="$nextTick(() => {
         let typingInterval = setInterval(startTyping, $data.typeSpeed);
 
@@ -50,8 +50,8 @@
     })"
     class="flex mx-auto text-center max-w-7xl h-[230px] md:h-[400px]"
 >
-    <h2 class="text-4xl md:text-4xl lg:text-7xl font-black leading-tight h-full uppercase italic">
-        <span class="invisible absolute">Encontra tu próximo auto en Automotores MW.</span>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight h-full uppercase italic">
+        <span class="invisible absolute left-0">Tenemos opciones de financiación, escribinos y te asesoramos.</span>
         <span x-text="text"></span>
         <span x-ref="cursor"
               :class="{ 'opacity-0': isCursorHidden, 'opacity-100': !isCursorHidden }"
