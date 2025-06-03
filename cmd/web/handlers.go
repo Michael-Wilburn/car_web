@@ -2,17 +2,18 @@ package main
 
 import (
 	"html/template"
-	"log"
 	"net/http"
 )
 
-func home(w http.ResponseWriter, r *http.Request) {
+func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
-		http.NotFound(w, r)
+		app.notFound(w)
 		return
 	}
 
 	files := []string{
+		"./ui/html/components/carBody.tmpl",
+		"./ui/html/components/carDropdown.tmpl",
 		"./ui/html/components/typingHero.tmpl",
 		"./ui/html/components/brands.tmpl",
 		"./ui/html/components/portal.tmpl",
@@ -23,13 +24,11 @@ func home(w http.ResponseWriter, r *http.Request) {
 	}
 	ts, err := template.ParseFiles(files...)
 	if err != nil {
-		log.Print(err.Error())
-		http.Error(w, "Internal Server Error", 500)
+		app.serverError(w, err)
 		return
 	}
 	err = ts.ExecuteTemplate(w, "base", nil)
 	if err != nil {
-		log.Print(err.Error())
-		http.Error(w, "Internal Server Error", 500)
+		app.serverError(w, err)
 	}
 }
